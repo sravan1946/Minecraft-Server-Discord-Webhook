@@ -2,6 +2,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
@@ -18,7 +19,11 @@ public class onLeave implements Listener {
     public void onQuit(PlayerQuitEvent event) {
         DiscordWebhook wh = new DiscordWebhook(url);
         String messgage = String.format(message, event.getPlayer().getDisplayName());
-        wh.setContent(messgage);
+        DiscordWebhook.EmbedObject embed = new DiscordWebhook.EmbedObject();
+        embed.setTitle("Player Left");
+        embed.setDescription(messgage);
+        embed.setColor(Color.RED);
+        wh.addEmbed(embed);
         try {
             wh.execute();
         } catch (MalformedURLException e) {

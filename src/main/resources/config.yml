@@ -1,4 +1,4 @@
-url: "PUT YOUR WEBHOOK URL HERE"
+url: ""
 
 
 
@@ -39,3 +39,11 @@ onLeave: true
 #The player's nickname can be accessed with %s
 #Any new lines \n need to be escaped \\n
 leaveMessage: "```diff\\n+ %s has left the server\\n```"
+
+#Send a message when a player joins the server
+onPlayerDeath: true
+
+#The discord message to send when a player joins the server
+#The player's nickname can be accessed with %s
+#Any new lines (\n) need to be escaped (\\n)
+playerDeathMessage: "```diff\\n+ %s\\n```"

@@ -38,6 +38,11 @@ public class MinecraftDiscordWebhook extends JavaPlugin {
             String message = config.getString("leaveMessage");
             getServer().getPluginManager().registerEvents(new onLeave(url, message), this);
         }
+
+        if (config.getBoolean("onPlayerDeath")) {
+            String message = config.getString("playerDeathMessage");
+            getServer().getPluginManager().registerEvents(new onPlayerDeath(url, message), this);
+        }
     }
 
     private void sendDiscordMessage(String message) {
