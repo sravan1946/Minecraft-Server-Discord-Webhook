@@ -22,7 +22,8 @@ public class onJoin implements Listener {
         DiscordWebhook.EmbedObject embed = new DiscordWebhook.EmbedObject();
         embed.setTitle("Player Joined");
         embed.setDescription(messgage);
-        embed.setColor(Color.CYAN);
+        embed.setColor(Color.GREEN);
+        embed.addField("Players Online", String.valueOf(event.getPlayer().getServer().getOnlinePlayers().size()), true);
         wh.addEmbed(embed);
         try {
             wh.execute();

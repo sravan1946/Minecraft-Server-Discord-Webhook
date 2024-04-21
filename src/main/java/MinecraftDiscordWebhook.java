@@ -2,6 +2,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.awt.Color;
 
 /**
  * Entry point for the template plugin. You should edit
@@ -47,7 +48,11 @@ public class MinecraftDiscordWebhook extends JavaPlugin {
 
     private void sendDiscordMessage(String message) {
         DiscordWebhook webhook = new DiscordWebhook(url);
-        webhook.setContent(message);
+        DiscordWebhook.EmbedObject embed = new DiscordWebhook.EmbedObject();
+        embed.setTitle("Server Status");
+        embed.setDescription(message);
+        embed.setColor(Color.YELLOW);
+        webhook.addEmbed(embed);
         try {
             webhook.execute();
         } catch (MalformedURLException e) {

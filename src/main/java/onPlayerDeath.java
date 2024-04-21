@@ -22,7 +22,7 @@ public class onPlayerDeath implements Listener {
         DiscordWebhook.EmbedObject embed = new DiscordWebhook.EmbedObject();
         embed.setTitle("Player Death");
         embed.setDescription(messgage);
-        embed.setColor(Color.RED);
+        embed.setColor(Color.white);
         wh.addEmbed(embed);
         try {
             wh.execute();
