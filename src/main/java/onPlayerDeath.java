@@ -18,7 +18,7 @@ public class onPlayerDeath implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
         DiscordWebhook wh = new DiscordWebhook(url);
-        String messgage = String.format(message, event.deathMessage());
+        String messgage = String.format(message, event.getDeathMessage());
         DiscordWebhook.EmbedObject embed = new DiscordWebhook.EmbedObject();
         embed.setTitle("Player Death");
         embed.setDescription(messgage);

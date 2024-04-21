@@ -18,7 +18,7 @@ public class onLeave implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
         DiscordWebhook wh = new DiscordWebhook(url);
-        String messgage = String.format(message, event.getPlayer().displayName());
+        String messgage = String.format(message, event.getPlayer().getDisplayName());
         DiscordWebhook.EmbedObject embed = new DiscordWebhook.EmbedObject();
         embed.setTitle("Player Left");
         embed.setDescription(messgage);
