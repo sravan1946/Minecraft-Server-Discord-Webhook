@@ -24,7 +24,7 @@ public class onLeave implements Listener {
         embed.setDescription(messgage);
         embed.setColor(Color.RED);
         // get the number of players online
-        embed.addField("Players Online", String.valueOf(event.getPlayer().getServer().getOnlinePlayers().size()), true);
+        embed.addField("Players Online", String.valueOf(event.getPlayer().getServer().getOnlinePlayers().size() - 1), true);
         wh.addEmbed(embed);
         try {
             wh.execute();
