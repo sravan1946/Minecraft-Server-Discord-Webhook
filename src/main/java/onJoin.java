@@ -18,7 +18,7 @@ public class onJoin implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         DiscordWebhook wh = new DiscordWebhook(url);
-        String messgage = String.format(message, event.getPlayer().getDisplayName());
+        String messgage = String.format(message, event.getPlayer().displayName());
         DiscordWebhook.EmbedObject embed = new DiscordWebhook.EmbedObject();
         embed.setTitle("Player Joined");
         embed.setDescription(messgage);
